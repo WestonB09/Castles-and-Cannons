@@ -1,0 +1,723 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* High Contrast Accessibility Mode */
+.high-contrast {
+  /* Override background colors */
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 5%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 60 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 0 0% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 90%;
+  --accent: 120 100% 50%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 100% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 30%;
+  --input: 0 0% 15%;
+  --ring: 60 100% 50%;
+  --radius: 0.5rem;
+}
+
+.high-contrast * {
+  /* Force high contrast text */
+  color: white !important;
+  border-color: white !important;
+}
+
+.high-contrast .bg-white,
+.high-contrast .bg-gray-50,
+.high-contrast .bg-gray-100,
+.high-contrast .bg-slate-50,
+.high-contrast .bg-background {
+  background-color: black !important;
+}
+
+.high-contrast .text-black,
+.high-contrast .text-gray-700,
+.high-contrast .text-gray-800,
+.high-contrast .text-gray-900,
+.high-contrast .text-slate-700,
+.high-contrast .text-foreground {
+  color: white !important;
+}
+
+.high-contrast .text-gray-500,
+.high-contrast .text-gray-600,
+.high-contrast .text-muted-foreground {
+  color: #cccccc !important;
+}
+
+/* High contrast buttons */
+.high-contrast button {
+  background-color: yellow !important;
+  color: black !important;
+  border: 2px solid white !important;
+  font-weight: bold !important;
+}
+
+.high-contrast button:hover {
+  background-color: lime !important;
+  color: black !important;
+}
+
+.high-contrast button:disabled {
+  background-color: #666 !important;
+  color: #ccc !important;
+}
+
+/* High contrast links */
+.high-contrast a {
+  color: yellow !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast a:hover {
+  color: lime !important;
+}
+
+/* High contrast inputs */
+.high-contrast input,
+.high-contrast textarea,
+.high-contrast select {
+  background-color: black !important;
+  color: white !important;
+  border: 2px solid white !important;
+}
+
+.high-contrast input:focus,
+.high-contrast textarea:focus,
+.high-contrast select:focus {
+  border-color: yellow !important;
+  outline: 2px solid yellow !important;
+}
+
+/* High contrast cards and containers */
+.high-contrast .bg-card,
+.high-contrast .border {
+  background-color: black !important;
+  border-color: white !important;
+  border-width: 2px !important;
+}
+
+/* High contrast badges and tags */
+.high-contrast .badge,
+.high-contrast .tag {
+  background-color: yellow !important;
+  color: black !important;
+  border: 1px solid white !important;
+}
+
+/* High contrast army unit displays */
+.high-contrast .army-unit {
+  background-color: black !important;
+  border: 2px solid white !important;
+  color: white !important;
+}
+
+/* High contrast achievement badges */
+.high-contrast .achievement-badge {
+  background-color: yellow !important;
+  color: black !important;
+  border: 2px solid white !important;
+}
+
+/* Enhanced focus indicators for accessibility */
+.high-contrast *:focus {
+  outline: 3px solid yellow !important;
+  outline-offset: 2px !important;
+}
+
+@keyframes progressBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Battle Animation Keyframes */
+@keyframes moveRight {
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(40px); }
+}
+
+@keyframes moveLeft {
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(-40px); }
+}
+
+@keyframes advanceToCenter {
+  0% { transform: translateX(0px) scale(1); }
+  25% { transform: translateX(120px) scale(1.05); }
+  50% { transform: translateX(240px) scale(1.1); }
+  75% { transform: translateX(320px) scale(1.05); }
+  100% { transform: translateX(380px) scale(1); }
+}
+
+@keyframes advanceFromRight {
+  0% { transform: translateX(0px) scale(1); }
+  25% { transform: translateX(-120px) scale(1.05); }
+  50% { transform: translateX(-240px) scale(1.1); }
+  75% { transform: translateX(-320px) scale(1.05); }
+  100% { transform: translateX(-380px) scale(1); }
+}
+
+@keyframes flyRight {
+  0% { transform: translateX(0px) translateY(0px) rotate(0deg); opacity: 1; }
+  100% { transform: translateX(200px) translateY(-10px) rotate(15deg); opacity: 0; }
+}
+
+@keyframes flyLeft {
+  0% { transform: translateX(0px) translateY(0px) rotate(180deg); opacity: 1; }
+  100% { transform: translateX(-200px) translateY(-10px) rotate(165deg); opacity: 0; }
+}
+
+@keyframes smokeUp {
+  0% { transform: translateY(0px) scale(0.5); opacity: 0.8; }
+  50% { transform: translateY(-20px) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-40px) scale(1.5); opacity: 0; }
+}
+
+/* Victory Animation Keyframes */
+@keyframes castleCollapse {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  30% { transform: scale(1.1) rotate(-2deg); opacity: 1; }
+  60% { transform: scale(0.8) rotate(5deg); opacity: 0.8; }
+  100% { transform: scale(0.3) rotate(15deg) translateY(20px); opacity: 0.2; }
+}
+
+@keyframes smokeAppear {
+  0% { opacity: 0; transform: scale(0.5) translateY(0px); }
+  50% { opacity: 0.8; transform: scale(1.2) translateY(-15px); }
+  100% { opacity: 0; transform: scale(2) translateY(-30px); }
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.5) rotate(180deg); }
+  100% { opacity: 0; transform: scale(0.5) rotate(360deg); }
+}
+
+/* Enhanced Battlefield Animations */
+@keyframes advanceToCenter {
+  0% { transform: translateX(0px) scale(1); }
+  25% { transform: translateX(80px) scale(1.05); }
+  50% { transform: translateX(160px) scale(1.1); }
+  75% { transform: translateX(180px) scale(1.05); }
+  100% { transform: translateX(160px) scale(1); }
+}
+
+@keyframes advanceToCenterReverse {
+  0% { transform: translateX(0px) scale(1); }
+  25% { transform: translateX(-80px) scale(1.05); }
+  50% { transform: translateX(-160px) scale(1.1); }
+  75% { transform: translateX(-180px) scale(1.05); }
+  100% { transform: translateX(-160px) scale(1); }
+}
+
+@keyframes winningAdvance {
+  0% { transform: translateX(0px) scale(1); }
+  30% { transform: translateX(100px) scale(1.1); }
+  60% { transform: translateX(200px) scale(1.15); }
+  100% { transform: translateX(250px) scale(1.2); }
+}
+
+@keyframes losingRetreat {
+  0% { transform: translateX(0px) scale(1); }
+  30% { transform: translateX(-30px) scale(0.9); }
+  60% { transform: translateX(-50px) scale(0.8); }
+  100% { transform: translateX(-20px) scale(0.85); }
+}
+
+/* Warfare 1917 Style Animations */
+@keyframes troopAdvanceToCenter {
+  0% { transform: translateX(0px) scaleX(1); }
+  25% { transform: translateX(80px) scaleX(1.02); }
+  50% { transform: translateX(160px) scaleX(1.05); }
+  75% { transform: translateX(240px) scaleX(1.08); }
+  90% { transform: translateX(280px) scaleX(1.1); }
+  100% { transform: translateX(260px) scaleX(1); }
+}
+
+@keyframes troopAdvanceFromRight {
+  0% { transform: translateX(0px) scaleX(-1); }
+  25% { transform: translateX(-80px) scaleX(-1.02); }
+  50% { transform: translateX(-160px) scaleX(-1.05); }
+  75% { transform: translateX(-240px) scaleX(-1.08); }
+  90% { transform: translateX(-280px) scaleX(-1.1); }
+  100% { transform: translateX(-260px) scaleX(-1); }
+}
+
+@keyframes marchingStep {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes battleSmoke {
+  0% { opacity: 0; transform: scale(0.5) translateY(0px); }
+  50% { opacity: 0.8; transform: scale(1.2) translateY(-10px); }
+  100% { opacity: 0; transform: scale(2) translateY(-20px); }
+}
+
+@keyframes muzzleFlash {
+  0% { opacity: 0; transform: scale(0.5); }
+  20% { opacity: 1; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+
+@keyframes combatClash {
+  0% { opacity: 0; transform: scale(0.5) translateY(0px); }
+  30% { opacity: 1; transform: scale(1.2) translateY(-8px); }
+  100% { opacity: 0; transform: scale(2) translateY(-20px); }
+}
+
+@keyframes unitDisappear {
+  0% { opacity: 1; transform: scale(1); }
+  30% { opacity: 0.8; transform: scale(1.1); }
+  60% { opacity: 0.5; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(0.3); }
+}
+
+@keyframes projectileFly {
+  0% { transform: translateX(0px) translateY(0px) rotate(0deg); opacity: 1; }
+  50% { transform: translateX(150px) translateY(-15px) rotate(15deg); opacity: 1; }
+  100% { transform: translateX(300px) translateY(-30px) rotate(30deg); opacity: 0; }
+}
+
+@keyframes territoryAdvance {
+  0% { width: 33%; }
+  100% { width: 60%; }
+}
+
+@keyframes territoryRetreat {
+  0% { width: 33%; }
+  100% { width: 15%; }
+}
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Castle and Cannon theme colors */
+  --royal-blue: hsl(217, 90%, 61%);
+  --castle-gold: hsl(43, 96%, 56%);
+  --stone-gray: hsl(217, 12.2%, 50.2%);
+  --forest-green: hsl(162, 86%, 40%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    background: linear-gradient(135deg, #87CEEB 0%, #98D8E8 25%, #90EE90 50%, #8FBC8F 75%, #696969 100%);
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 15% 85%, rgba(139, 69, 19, 0.3) 2px, transparent 2px),
+      radial-gradient(circle at 85% 15%, rgba(139, 69, 19, 0.2) 1px, transparent 1px),
+      radial-gradient(circle at 45% 70%, rgba(34, 139, 34, 0.4) 3px, transparent 3px),
+      radial-gradient(circle at 75% 30%, rgba(169, 169, 169, 0.5) 2px, transparent 2px),
+      linear-gradient(45deg, transparent 48%, rgba(139, 69, 19, 0.1) 49%, rgba(139, 69, 19, 0.1) 51%, transparent 52%);
+    background-size: 200px 200px, 150px 150px, 300px 300px, 100px 100px, 50px 50px;
+    background-position: 0 0, 100px 100px, 50px 150px, 200px 50px, 25px 25px;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Medieval castle silhouettes in corners */
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, 
+      rgba(105, 105, 105, 0.6) 0%, 
+      rgba(105, 105, 105, 0.4) 30%, 
+      rgba(105, 105, 105, 0.2) 60%, 
+      transparent 100%);
+    background-image: 
+      polygon(0 100%, 0 80%, 10% 80%, 10% 70%, 20% 70%, 20% 80%, 30% 80%, 30% 60%, 40% 60%, 40% 80%, 50% 80%, 50% 70%, 60% 70%, 60% 80%, 70% 80%, 70% 50%, 80% 50%, 80% 80%, 90% 80%, 90% 70%, 100% 70%, 100% 100%);
+    clip-path: polygon(0 100%, 0 80%, 8% 80%, 8% 70%, 15% 70%, 15% 60%, 22% 60%, 22% 80%, 30% 80%, 30% 75%, 38% 75%, 38% 65%, 45% 65%, 45% 80%, 55% 80%, 55% 70%, 62% 70%, 62% 55%, 70% 55%, 70% 80%, 78% 80%, 78% 75%, 85% 75%, 85% 65%, 92% 65%, 92% 80%, 100% 80%, 100% 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+@layer utilities {
+  .animate-bounce-subtle {
+    animation: bounce 1s ease-in-out 2;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Medieval themed card backgrounds */
+  .medieval-card {
+    background: rgba(245, 245, 220, 0.95);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(139, 69, 19, 0.3);
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  .medieval-card-dark {
+    background: rgba(40, 40, 40, 0.95);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(139, 69, 19, 0.5);
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(139, 69, 19, 0.3);
+  }
+
+  /* Floating clouds animation */
+  .floating-clouds::before {
+    content: '☁️ ⛅ ☁️';
+    position: fixed;
+    top: 10%;
+    left: -100px;
+    font-size: 2rem;
+    opacity: 0.4;
+    animation: float-clouds 120s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .floating-clouds::after {
+    content: '⛅ ☁️ ⛅';
+    position: fixed;
+    top: 25%;
+    right: -100px;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    animation: float-clouds-reverse 180s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* Cloud floating animations */
+@keyframes float-clouds {
+  0% { transform: translateX(-100px); }
+  100% { transform: translateX(calc(100vw + 100px)); }
+}
+
+@keyframes float-clouds-reverse {
+  0% { transform: translateX(100px); }
+  100% { transform: translateX(calc(-100vw - 100px)); }
+}
+
+/* Enhanced Battle Animations */
+@keyframes troopCrossMiddle {
+  0% { transform: translateX(0) scale(1); }
+  25% { transform: translateX(120px) scale(1.1); }
+  50% { transform: translateX(250px) scale(1.2); }
+  75% { transform: translateX(380px) scale(1.3); }
+  100% { transform: translateX(480px) scale(1.4); }
+}
+
+@keyframes projectileCrossScreen {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 1; }
+  30% { transform: translateX(200px) translateY(-10px) rotate(45deg); opacity: 0.9; }
+  60% { transform: translateX(400px) translateY(5px) rotate(90deg); opacity: 0.7; }
+  80% { transform: translateX(550px) translateY(-5px) rotate(135deg); opacity: 0.5; }
+  100% { transform: translateX(700px) translateY(0) rotate(180deg); opacity: 0; }
+}
+
+@keyframes goblinRetreat {
+  0% { transform: translateX(0) scale(1); opacity: 1; }
+  60% { transform: translateX(0) scale(1); opacity: 1; }
+  75% { transform: translateX(-50px) scale(0.9); opacity: 0.8; }
+  90% { transform: translateX(-120px) scale(0.8); opacity: 0.6; }
+  100% { transform: translateX(-200px) scale(0.7); opacity: 0.3; }
+}
+
+@keyframes victoryAdvance {
+  0% { transform: translateX(0) scale(1); opacity: 1; }
+  60% { transform: translateX(160px) scale(1.1); opacity: 1; }
+  75% { transform: translateX(280px) scale(1.2); opacity: 1; }
+  90% { transform: translateX(420px) scale(1.3); opacity: 1; }
+  100% { transform: translateX(520px) scale(1.4); opacity: 1; }
+}
+
+@keyframes archerAdvance {
+  0% { transform: translateX(0) scale(1); opacity: 1; }
+  70% { transform: translateX(80px) scale(1.05); opacity: 1; }
+  85% { transform: translateX(180px) scale(1.1); opacity: 1; }
+  100% { transform: translateX(280px) scale(1.15); opacity: 1; }
+}
+
+@keyframes troopAdvanceFromRight {
+  0% { transform: translateX(0) scale(1); }
+  25% { transform: translateX(-80px) scale(1.05); }
+  50% { transform: translateX(-160px) scale(1.1); }
+  75% { transform: translateX(-120px) scale(1.05); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+/* New Animation Variations for Battle Variance */
+@keyframes arcRight {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  25% { transform: translate(150px, -20px) rotate(15deg); opacity: 0.9; }
+  50% { transform: translate(300px, -10px) rotate(30deg); opacity: 0.7; }
+  75% { transform: translate(450px, 10px) rotate(45deg); opacity: 0.5; }
+  100% { transform: translate(600px, 0) rotate(60deg); opacity: 0; }
+}
+
+@keyframes zigzagRight {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(120px, -15px); }
+  40% { transform: translate(240px, 15px); }
+  60% { transform: translate(360px, -10px); }
+  80% { transform: translate(480px, 20px); }
+  100% { transform: translate(600px, 0); }
+}
+
+@keyframes spiralAttack {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(100px, -20px) rotate(90deg) scale(1.1); }
+  50% { transform: translate(200px, 0) rotate(180deg) scale(1.2); }
+  75% { transform: translate(300px, 20px) rotate(270deg) scale(1.1); }
+  100% { transform: translate(400px, 0) rotate(360deg) scale(1); }
+}
+
+@keyframes chargeWave {
+  0% { transform: translateX(0) translateY(0) scale(1); }
+  15% { transform: translateX(60px) translateY(-5px) scale(1.05); }
+  30% { transform: translateX(120px) translateY(5px) scale(1.1); }
+  45% { transform: translateX(180px) translateY(-8px) scale(1.15); }
+  60% { transform: translateX(240px) translateY(3px) scale(1.2); }
+  75% { transform: translateX(300px) translateY(-6px) scale(1.15); }
+  90% { transform: translateX(360px) translateY(8px) scale(1.1); }
+  100% { transform: translateX(420px) translateY(0) scale(1.25); }
+}
+
+@keyframes retreatScatter {
+  0% { transform: translateX(0) translateY(0) scale(1) rotate(0deg); }
+  20% { transform: translateX(-40px) translateY(-15px) scale(0.95) rotate(-10deg); }
+  40% { transform: translateX(-80px) translateY(10px) scale(0.9) rotate(5deg); }
+  60% { transform: translateX(-120px) translateY(-20px) scale(0.85) rotate(-15deg); }
+  80% { transform: translateX(-160px) translateY(25px) scale(0.8) rotate(20deg); }
+  100% { transform: translateX(-200px) translateY(0) scale(0.75) rotate(0deg); }
+}
+
+@keyframes defendFormation {
+  0% { transform: translateX(0) scale(1); }
+  25% { transform: translateX(-20px) scale(1.05); }
+  50% { transform: translateX(-40px) scale(1.1); }
+  75% { transform: translateX(-20px) scale(1.05); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+@keyframes chaosMovement {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  12.5% { transform: translate(30px, -20px) rotate(45deg); }
+  25% { transform: translate(-15px, 25px) rotate(-30deg); }
+  37.5% { transform: translate(45px, 10px) rotate(60deg); }
+  50% { transform: translate(-30px, -15px) rotate(-45deg); }
+  62.5% { transform: translate(25px, 30px) rotate(90deg); }
+  75% { transform: translate(-45px, -5px) rotate(-60deg); }
+  87.5% { transform: translate(35px, -25px) rotate(30deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Enhanced Projectile Animations */
+@keyframes flyLeft {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 1; }
+  25% { transform: translateX(-150px) translateY(-5px) rotate(-15deg); opacity: 0.9; }
+  50% { transform: translateX(-300px) translateY(5px) rotate(-30deg); opacity: 0.7; }
+  75% { transform: translateX(-450px) translateY(-10px) rotate(-45deg); opacity: 0.5; }
+  100% { transform: translateX(-600px) translateY(0) rotate(-60deg); opacity: 0; }
+}
+
+@keyframes flyRight {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 1; }
+  25% { transform: translateX(150px) translateY(-3px) rotate(10deg); opacity: 0.9; }
+  50% { transform: translateX(300px) translateY(2px) rotate(20deg); opacity: 0.7; }
+  75% { transform: translateX(450px) translateY(-5px) rotate(30deg); opacity: 0.5; }
+  100% { transform: translateX(600px) translateY(0) rotate(40deg); opacity: 0; }
+}
+
+@keyframes massiveBarrage {
+  0% { transform: translateX(0) translateY(0) scale(1); opacity: 1; }
+  15% { transform: translateX(100px) translateY(-15px) scale(1.1); opacity: 0.95; }
+  30% { transform: translateX(200px) translateY(10px) scale(1.2); opacity: 0.9; }
+  45% { transform: translateX(300px) translateY(-20px) scale(1.3); opacity: 0.8; }
+  60% { transform: translateX(400px) translateY(8px) scale(1.4); opacity: 0.6; }
+  80% { transform: translateX(500px) translateY(-12px) scale(1.5); opacity: 0.3; }
+  100% { transform: translateX(600px) translateY(0) scale(1.6); opacity: 0; }
+}
+
+@keyframes smokeUp {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-20px) scale(1.2); opacity: 0.5; }
+  100% { transform: translateY(-40px) scale(1.5); opacity: 0; }
+}
+
+@keyframes marchingStep {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-2px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes unitDisappear {
+  0% { opacity: 1; transform: scale(1); }
+  60% { opacity: 0.8; transform: scale(0.9); }
+  80% { opacity: 0.4; transform: scale(0.7); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+
+@keyframes combatClash {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  25% { transform: scale(1.3) rotate(10deg); opacity: 0.9; }
+  50% { transform: scale(1.6) rotate(-5deg); opacity: 0.7; }
+  75% { transform: scale(1.8) rotate(15deg); opacity: 0.5; }
+  100% { transform: scale(2) rotate(0deg); opacity: 0; }
+}
+
+@keyframes troopAdvanceToCenter {
+  0% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(200px) scale(1.1); }
+  100% { transform: translateX(350px) scale(1.2); }
+}
+
+/* Battle Result Modal Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes victory-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(234, 179, 8, 0.6);
+  }
+}
+
+@keyframes defeat-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 1s ease-out forwards;
+}
+
+.victory-glow {
+  animation: victory-glow 2s ease-in-out infinite;
+}
+
+.defeat-glow {
+  animation: defeat-glow 2s ease-in-out infinite;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
+}
