@@ -1,0 +1,24 @@
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #f5f5f5;
+  padding: 20px;
+}
+.student-card {
+  background: white;
+  display: inline-block;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  width: 200px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+button {
+  margin-top: 10px;
+}
+.simulation {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+}
